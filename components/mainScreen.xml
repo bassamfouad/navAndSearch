@@ -1,0 +1,8 @@
+<component name="MainScreen" extends="Scene" initialFocus="topNav">
+  <children>
+    <TopNav id="topNav"/>
+    <HomeScreen id="homeScreen" />
+    <SearchScreen id="searchScreen" visible="false"/>
+  </children>
+  <script type="text/brightscript" uri="./mainScreen.brs" />
+</component>

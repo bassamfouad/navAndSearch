@@ -1,0 +1,14 @@
+<component name="SearchResults" extends="node">
+    <children>
+        <Poster id="thumbnail" width="0.0" height="0.0"/>
+        <Label id="searchLabel" />
+    </children>
+    <interface>
+        <field id="searchOutput" type="string" value="" />
+        <field id="itemLabel" type="string" />
+        <field id="itemPoster" type="uri" />
+
+    </interface>
+    <script type="text/brightscript" uri="./searchResults.brs" />
+</component>
+

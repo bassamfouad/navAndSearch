@@ -1,0 +1,13 @@
+<component name = "SearchScreen" extends="Group">
+    <children >
+        <LayoutGroup translation="[120,120]" layoutDirection="horiz">
+            <MiniKeyboard id = "miniKeyBoard" />
+            <SearchResults id="searchResults"/>
+        </LayoutGroup>
+    </children>
+    <interface>
+        <field id="hasFocus" type="bool" value="false" alwaysNotify="true"/>
+    </interface>
+    <script type="text/brightscript" uri="./searchScreen.brs" />
+</component>
+

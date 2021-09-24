@@ -1,0 +1,17 @@
+<?xml version = "1.0" encoding = "utf-8" ?>
+<component name="TopNav" extends="Group" initialFocus="navBar">
+    <children>
+        <Rectangle id="currentFocus" height="5" translation="[100,100]" color="0xFFFFF"/>
+        <Rectangle id="navBarWrapper" color="0x000080" translation="[10,10]">
+            <LayoutGroup id = "navBar" layoutDirection="horiz" itemSpacings="[50,50]" translation="[100,42]">
+                <Label id="homeScreen" text="Home" focusable="true"/>
+                <Label id="searchScreen" text="Search" focusable="true"/>
+            </LayoutGroup >
+        </Rectangle>
+    </children >
+    <interface>
+        <field id="selectedNavItem" type="node" onChange="changeFocus" alwaysNotify="true"/>
+        <field id="navHasFocus" type="bool" value="true" />
+    </interface>
+    <script type="text/brightscript" uri="./topNav.brs" />
+</component >
