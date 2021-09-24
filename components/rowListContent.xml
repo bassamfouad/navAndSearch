@@ -55,7 +55,7 @@
         title = "Observed Fields" />
             <ContentNode 
         HDPosterUrl = "http://www.sdktestinglab.com/Tutorial/images/keyeventspg.jpg" 
-        title = "Key Events" />
+        title = "rKey Events" />
         </ContentNode>
 
     </children>

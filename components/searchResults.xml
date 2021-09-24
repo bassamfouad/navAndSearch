@@ -1,14 +1,30 @@
-<component name="SearchResults" extends="node">
-    <children>
-        <Poster id="thumbnail" width="0.0" height="0.0"/>
-        <Label id="searchLabel" />
-    </children>
-    <interface>
-        <field id="searchOutput" type="string" value="" />
-        <field id="itemLabel" type="string" />
-        <field id="itemPoster" type="uri" />
-
-    </interface>
-    <script type="text/brightscript" uri="./searchResults.brs" />
+<component name = "SearchResults" extends = "Group">
+  <interface>
+    <field id = "itemContent" type = "node" onChange = "showcontent" alwaysNotify="true"/>
+    <field id = "focusPercent" type = "float" onChange = "showfocus"/>
+    <field id = "rowFocusPercent" type = "float" onChange = "showrowfocus"/>
+  </interface>
+  <children>
+    <Poster 
+      id = "itemPoster" 
+      translation = "[ 10, 10 ]" 
+      width = "512" 
+      height = "288" 
+      scaleRotateCenter = "[ 256.0, 144.0 ]">
+      <Rectangle 
+        id = "itemMask" 
+        color = "0x000000FF" 
+        opacity = "0.75" 
+        width = "512" 
+        height = "288" 
+        scaleRotateCenter = "[ 256.0, 144.0 ]"/>
+    </Poster>
+    <Label 
+      id = "itemLabel" 
+      translation = "[ 20, 264 ]" 
+      horizAlign = "right" 
+      width = "492" 
+      opacity = "0.0"/>
+  </children>
+  <script type="text/brightscript" uri="./searchResults.brs" />
 </component>
-

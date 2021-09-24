@@ -1,38 +1,19 @@
 sub init()
-    m.searchLabel = m.top.findNode("searchLabel")
-    m.thumbnail = m.top.findNode("thumbnail")
-    m.top.observeField("searchOutput", "handelSearchOutput")
-    m.searchAvailableArray = []
+    m.itemposter = m.top.findNode("itemPoster")
+    m.itemmask = m.top.findNode("itemMask")
+    m.itemlabel = m.top.findNode("itemLabel")
 end sub
 
-
-sub handelSearchOutput()
-    corX = m.thumbnail.LocalBoundingRect().x + m.thumbnail.LocalBoundingRect().width
-    corY = m.thumbnail.LocalBoundingRect().y
-    m.searchAvailableArray = []
-    for each item in m.top.getAll()
-        if item.TITLE <> invalid
-            itemTitle = LCase(item.TITLE)
-            searchOutput = LCase(m.top.searchOutput)
-            for i = 0 to Len(searchOutput) step 1
-                if searchOutput.Split("")[i] <> invalid and itemTitle.Split("")[i] = searchOutput.Split("")[i]
-                    existingItem = CreateObject("rosGNode", "SearchResults")
-                    existingItem.itemLabel = item.TITLE
-                    existingItem.id = item.TITLE
-                    existingItem.itemPoster = item.HDPOSTERURL
-                    m.searchAvailableArray.Push(existingItem)
-                end if
-            end for
-        end if
-    end for
-    handleScreenDisplay()
+sub showcontent()
+    itemcontent = m.top.itemContent
+    m.itemposter.uri = itemcontent.HDPosterUrl
+    m.itemlabel.text = itemcontent.title
 end sub
-
-
-sub handleScreenDisplay()
-    for each item in m.searchAvailableArray
-        if item.itemPoster <> ""
-            print item
-        end if
-    end for
+sub showfocus()
+    scale = 1 + (m.top.focusPercent * 0.08)
+    m.itemposter.scale = [scale, scale]
+end sub
+sub showrowfocus()
+    m.itemmask.opacity = 0.75 - (m.top.rowFocusPercent * 0.75)
+    m.itemlabel.opacity = m.top.rowFocusPercent
 end sub

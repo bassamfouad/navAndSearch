@@ -2,7 +2,17 @@
     <children >
         <LayoutGroup translation="[120,120]" layoutDirection="horiz">
             <MiniKeyboard id = "miniKeyBoard" />
-            <SearchResults id="searchResults"/>
+            <RowList 
+               id = "simpleRowlist" 
+               itemComponentName = "SearchResults" 
+               numRows = "1" 
+               itemSize = "[ 1608, 308 ]" 
+               rowItemSize = "[ [536, 308] ]" 
+               itemSpacing = "[ 0, 40 ]" 
+               showRowLabel = "[ true ]" 
+               drawFocusFeedback = "false" 
+               vertFocusAnimationStyle = "fixedFocusWrap" 
+               rowFocusAnimationStyle = "fixedFocusWrap" />
         </LayoutGroup>
     </children>
     <interface>
