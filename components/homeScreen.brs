@@ -1,19 +1,13 @@
 sub init()
     m.rowlist = m.top.findNode("simpleRowList")
-    m.rowlist.content = CreateObject("roSGNode", "RowListContent")
+    m.rowlist.content = CreateObject("roSGNode", "ContentNode")
+    m.taskComponent = createObject("roSGNode", "TaskComponent")
+    m.taskComponent.observeField("content", "setContent")
+    m.taskComponent.contenturi = "https://reqres.in/api/users?page=2"
+    m.taskComponent.control = "RUN"
     m.rowlist.observeField("rowItemFocused", "handleRowItemFocused")
 end sub
-sub handleRowItemFocused()
-    firstRow = m.rowlist.rowItemFocused [0]
-    if firstRow = 0
-    end if
+
+sub setContent()
+    m.rowlist.content = m.taskComponent.content
 end sub
-
-
-function onKeyEvent(key as string, press as boolean) as boolean
-    handled = false
-    if press then
-        print key
-    end if
-    return handled
-end function
