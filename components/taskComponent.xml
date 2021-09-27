@@ -1,0 +1,7 @@
+<component name = "TaskComponent" extends = "Task">
+    <interface>
+        <field id = "contenturi" type = "uri" />
+        <field id = "content" type = "node" />
+    </interface>
+    <script type="text/brightscript" uri="./taskComponent.brs" />
+</component>
